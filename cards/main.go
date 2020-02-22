@@ -1,15 +1,13 @@
 package main
 
 func main() {
-	cards := deck{
-		"Ace of Diamonds",
-		newCard(),
-	}
-	cards = append(cards, "Eight of Spades")
+	cards := newDeck()
 
-	cards.print()
-}
+	cards.shuffle()
 
-func newCard() string {
-	return "Five of Diamonds"
+	hand, remainingCards := deal(cards, 3)
+
+	hand.print()
+
+	remainingCards.print()
 }
