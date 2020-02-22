@@ -6,7 +6,10 @@ import (
 	"math/rand"
 	"os"
 	"strings"
+<<<<<<< HEAD
 	"time"
+=======
+>>>>>>> d1f9b1c... functionalities of deck
 )
 
 type deck []string
@@ -26,7 +29,11 @@ func newDeck() deck {
 
 	for _, suite := range cardSuites {
 		for _, value := range cardValues {
+<<<<<<< HEAD
 			cards = append(cards, value+" of "+suite)
+=======
+			cards = append(cards, suite+" of "+value)
+>>>>>>> d1f9b1c... functionalities of deck
 		}
 	}
 	return cards
@@ -53,10 +60,15 @@ func newDeckFromFile(filename string) deck {
 }
 
 func (d deck) shuffle() {
+<<<<<<< HEAD
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 	for index := range d {
 		position := r.Intn(len(d) - 1)
+=======
+	for index := range d {
+		position := rand.Intn(len(d) - 1)
+>>>>>>> d1f9b1c... functionalities of deck
 		d[index], d[position] = d[position], d[index]
 	}
 }
